@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'spree_extension'
-  s.version     = '0.0.5'
+  s.version     = '0.0.6'
   s.summary     = 'Common tools and helpers for Spree Extensions developers'
   s.description = 'Common tools and helpers for Spree Extensions developers'
   s.authors     = ['Damian Legawiec']
@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'activerecord', '>= 4.2'
+  s.add_dependency 'spree_core', '>= 3.1'
 end
