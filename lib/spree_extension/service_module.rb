@@ -29,13 +29,13 @@ unless defined?(Spree::ServiceModule)
 
       ResultError = Struct.new(:value) do
         def to_s
-          return value.full_messages.join(', ') if value&.respond_to?(:full_messages)
+          return value.full_messages.join(', ') if value && value.respond_to?(:full_messages)
 
           value.to_s
         end
 
         def to_h
-          return value.messages if value&.respond_to?(:messages)
+          return value.messages if value && value.respond_to?(:messages)
 
           {}
         end
