@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'spree_extension'
-  s.version     = '0.0.9'
+  s.version     = '0.1.0'
   s.summary     = 'Common tools and helpers for Spree Extensions developers'
   s.description = 'Common tools and helpers for Spree Extensions developers'
   s.authors     = ['Damian Legawiec']
