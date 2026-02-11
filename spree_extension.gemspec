@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Spree Extension Generator'
   s.description = 'CLI tool to generate and manage Spree Commerce extensions'
   s.homepage    = 'https://spreecommerce.org'
-  s.licenses    = ['AGPL-3.0-or-later', 'BSD-3-Clause']
+  s.license     = 'MIT'
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/spree/spree_extension/issues",

@@ -41,4 +41,4 @@ For more information on developing Spree extensions, see the [Spree Developer Do
 
 ## License
 
-Spree Extension is released under the [AGPL-3.0](LICENSE.md) and [BSD-3-Clause](LICENSE.md) licenses.
+Spree Extension is released under the [MIT License](LICENSE.md).
