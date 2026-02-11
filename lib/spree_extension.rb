@@ -1,3 +1,11 @@
-require 'spree_extension/migration'
-require 'spree_extension/service_module'
-require 'spree_extension/components_checker'
+require 'thor'
+require 'thor/group'
+
+case ARGV.first
+when 'version', '-v', '--version'
+  puts Gem.loaded_specs['spree_extension'].version
+when 'create'
+  ARGV.shift
+  require 'spree_extension/extension'
+  SpreeExtension::Extension.start
+end
