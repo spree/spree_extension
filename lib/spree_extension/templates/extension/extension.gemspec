@@ -20,7 +20,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree', '>= <%= Gem.loaded_specs['spree_extension'].version %>'
-  s.add_dependency 'spree_admin', '>= <%= Gem.loaded_specs['spree_extension'].version %>'
+  spree_version = '>= 5.4.0.beta'
+  s.add_dependency 'spree', spree_version
+  s.add_dependency 'spree_admin', spree_version
+
   s.add_development_dependency 'spree_dev_tools'
 end
