@@ -75,6 +75,14 @@ module SpreeExtension
       def use_prefix(prefix)
         @file_name = prefix + Thor::Util.snake_case(file_name) unless file_name =~ /^#{prefix}/
       end
+
+      def author_name
+        @author_name ||= `git config user.name`.strip.presence || 'TODO: Write your name'
+      end
+
+      def author_email
+        @author_email ||= `git config user.email`.strip.presence || 'TODO: Write your email address'
+      end
     end
   end
 end

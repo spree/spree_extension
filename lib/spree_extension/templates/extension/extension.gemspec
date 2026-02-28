@@ -11,10 +11,10 @@ Gem::Specification.new do |s|
   s.summary     = "Spree Commerce <%= human_name %> Extension"
   s.required_ruby_version = '>= 3.2'
 
-  s.author    = 'You'
-  s.email     = 'you@example.com'
-  s.homepage  = 'https://github.com/your-github-handle/<%= file_name %>'
-  s.license = 'MIT'
+  s.author    = '<%= author_name %>'
+  s.email     = '<%= author_email %>'
+  s.homepage  = 'https://github.com/<%= file_name %>'
+  s.license   = 'MIT'
 
   s.files        = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE.md", "Rakefile", "README.md"].reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
   s.require_path = 'lib'
