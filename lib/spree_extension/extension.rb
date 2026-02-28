@@ -77,11 +77,13 @@ module SpreeExtension
       end
 
       def author_name
-        @author_name ||= `git config user.name`.strip.presence || 'TODO: Write your name'
+        name = `git config user.name`.strip
+        @author_name ||= name.empty? ? 'TODO: Write your name' : name
       end
 
       def author_email
-        @author_email ||= `git config user.email`.strip.presence || 'TODO: Write your email address'
+        email = `git config user.email`.strip
+        @author_email ||= email.empty? ? 'TODO: Write your email address' : email
       end
     end
   end

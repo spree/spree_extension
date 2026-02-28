@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "spree_extension"
-  s.version     = "1.0.1"
+  s.version     = "1.0.2"
   s.authors     = ['Spark Solutions Sp. z o.o.', 'Vendo Connect Inc.']
   s.email       = ['hello@spreecommerce.org']
   s.summary     = 'Spree Extension Generator'
