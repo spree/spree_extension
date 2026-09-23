@@ -28,8 +28,10 @@ An extension is backend code only: models, migrations, Store and Admin API endpo
 |---|---|
 | Models, migrations, business logic | `app/models`, `app/services`, `db/migrate` |
 | API endpoints | `app/controllers/spree/api/v3/{store,admin}`, `app/serializers/spree/api/v3`, `config/routes.rb` |
-| Permission scopes, workflow hooks, registries | `config/initializers/spree.rb` |
-| Decorators, `additional_permitted_attributes`, subscribers | `lib/<%= file_name %>/engine.rb` |
+| Decorators (last resort) | `app/models/spree/*_decorator.rb` |
+| Event subscribers | `app/subscribers/<%= file_name %>` |
+| Permission scopes, workflow hooks, subscriber registration, registries | `config/initializers/spree.rb` |
+| Decorator loading, `additional_permitted_attributes` | `lib/<%= file_name %>/engine.rb` |
 | Admin screens | A [dashboard plugin](https://spreecommerce.org/docs/developer/dashboard/plugins/overview) — scaffold one with `npx @spree/cli plugin new <%= file_name.delete_prefix('spree_').tr('_', '-') %>` |
 | Storefront pages | Your storefront application, through `@spree/sdk` |
 
