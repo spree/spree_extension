@@ -1,23 +1,27 @@
-# Uncomment lines below to add your own custom business logic
-# such as promotions, shipping methods, etc.
+# Register your extension with Spree here. This file is loaded by the host
+# application at boot, like any other initializer.
+#
+# Permission scopes: adds read_<name> and write_<name> permissions for staff
+# roles and secret API keys. Use `scoped_resource :<name>` in your Admin API
+# controllers to require them.
+# Spree.permissions.register_scope(:my_resources, group: :catalog, resources: -> {
+#   [Spree::MyResource]
+# })
+#
+# Workflow hooks: run your code at a named point inside a Spree workflow.
+# Hook names are validated at boot, so a typo fails at startup.
+# Spree.hooks.register('products.activate.validate', '<%= class_name %>::MyValidator')
+
 Rails.application.config.after_initialize do
-  # Spree.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
+  # Event subscribers (app/subscribers) — `bin/rails g spree:subscriber` adds
+  # registrations here.
+  # Spree.subscribers << <%= class_name %>::MySubscriber
+
+  # Registries: custom payment methods, calculators, promotion rules, etc.
   # Spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
-
-  # Spree.calculators.tax_rates << Spree::TaxRates::FinanceTeamForcedMeToCodeThis
-
-  # Spree.stock_splitters << Spree::Stock::Splitters::SecretLogicSplitter
-
-  # Spree.adjusters << Spree::Adjustable::Adjuster::TaxTheRich
-
-  # Custom promotions
-  # Spree.calculators.promotion_actions_create_adjustments << Spree::Calculators::PromotionActions::CreateAdjustments::AddDiscountForFriends
-  # Spree.calculators.promotion_actions_create_item_adjustments << Spree::Calculators::PromotionActions::CreateItemAdjustments::FinanceTeamForcedMeToCodeThis
-  # Spree.promotions.rules << Spree::Promotions::Rules::OnlyForVIPCustomers
-  # Spree.promotions.actions << Spree::Promotions::Actions::GiftWithPurchase
-
-  # Spree.taxon_rules << Spree::TaxonRules::ProductsWithColor
-
-  # Spree.exports << Spree::Exports::Payments
-  # Spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
+  # Spree.calculators.shipping_methods << Spree::Calculator::Shipping::SuperExpensiveNotVeryFastShipping
+  # Spree.promotions.rules << Spree::Promotion::Rules::OnlyForVIPCustomers
+  # Spree.promotions.actions << Spree::Promotion::Actions::GiftWithPurchase
+  # Spree.stock_splitters << Spree::Stock::Splitter::SecretLogicSplitter
+  # Rails.application.config.spree.collection_rules << MyExtension::CollectionRules::ProductsWithColor
 end

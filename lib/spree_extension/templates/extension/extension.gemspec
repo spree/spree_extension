@@ -16,13 +16,13 @@ Gem::Specification.new do |s|
   s.homepage  = 'https://github.com/<%= file_name %>'
   s.license   = 'MIT'
 
-  s.files        = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE.md", "Rakefile", "README.md"].reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
+  s.files        = Dir["{app,config,db,lib}/**/*", "LICENSE.md", "Rakefile", "README.md"].reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  spree_version = '>= 5.4.0.beta'
-  s.add_dependency 'spree', spree_version
-  s.add_dependency 'spree_admin', spree_version
+  spree_version = '>= 6.0.0.beta'
+  s.add_dependency 'spree_core', spree_version
+  s.add_dependency 'spree_api', spree_version
 
   s.add_development_dependency 'spree_dev_tools'
 end

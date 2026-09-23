@@ -19,18 +19,15 @@ module SpreeExtension
       directory 'bin',      "#{file_name}/bin"
       directory 'spec',     "#{file_name}/spec"
 
-      empty_directory "#{file_name}/app/models/#{file_name}"
-      empty_directory "#{file_name}/app/views/spree"
-      empty_directory "#{file_name}/app/controllers/spree/admin"
-      empty_directory "#{file_name}/app/controllers/#{file_name}"
-      empty_directory "#{file_name}/app/services/#{file_name}"
-      empty_directory "#{file_name}/app/serializers/spree/api/v3"
+      empty_directory "#{file_name}/app/models/spree"
+      empty_directory "#{file_name}/app/controllers/spree/api/v3/store"
+      empty_directory "#{file_name}/app/controllers/spree/api/v3/admin"
       empty_directory "#{file_name}/app/serializers/spree/api/v3/admin"
-      empty_directory "#{file_name}/vendor/javascript"
-      empty_directory "#{file_name}/vendor/stylesheets"
+      empty_directory "#{file_name}/app/services/#{file_name}"
+      empty_directory "#{file_name}/app/subscribers/#{file_name}"
+      empty_directory "#{file_name}/db/migrate"
 
       chmod "#{file_name}/bin/rails", 0o755
-      chmod "#{file_name}/bin/importmap", 0o755
 
       template 'extension.gemspec', "#{file_name}/#{file_name}.gemspec"
       template 'Gemfile', "#{file_name}/Gemfile"
@@ -41,7 +38,6 @@ module SpreeExtension
       template 'config/routes.rb', "#{file_name}/config/routes.rb"
       template 'config/locales/en.yml', "#{file_name}/config/locales/en.yml"
       template 'config/initializers/spree.rb', "#{file_name}/config/initializers/spree.rb"
-      template 'config/importmap.rb', "#{file_name}/config/importmap.rb"
 
       template 'rspec', "#{file_name}/.rspec"
       template '.github/workflows/tests.yml', "#{file_name}/.github/workflows/tests.yml"
@@ -57,7 +53,9 @@ module SpreeExtension
         Congrats, Your Spree #{human_name} extension has been generated 🚀
 
         Next steps:
-        * Read Spree Developer Documentation at: https://docs.spreecommerce.org/developer
+        * cd #{file_name} && bundle install && bundle exec rake test_app
+        * Read the extension guide: https://spreecommerce.org/docs/developer/contributing/creating-an-extension
+        * Admin screens are built as a dashboard plugin: npx @spree/cli plugin new #{file_name.delete_prefix('spree_').tr('_', '-')}
 
         #{'*' * 80}
       }

@@ -1,7 +1,8 @@
-require 'spree'
-require '<%=file_name%>/engine'
-require '<%=file_name%>/version'
-require '<%=file_name%>/configuration'
+require 'spree_core'
+require 'spree_api'
+require '<%= file_name %>/engine'
+require '<%= file_name %>/version'
+require '<%= file_name %>/configuration'
 
 module <%= class_name %>
   mattr_accessor :queue
