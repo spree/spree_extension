@@ -27,9 +27,7 @@ module <%= class_name %>
       # Spree::Product.additional_permitted_attributes += [:my_column]
     end
 
-    # Register event subscribers from app/subscribers once all engines are loaded.
-    # config.after_initialize do
-    #   Spree.subscribers << <%= class_name %>::MySubscriber
-    # end
+    # Event subscribers, permission scopes, hooks and registry entries are
+    # registered in config/initializers/spree.rb.
   end
 end
