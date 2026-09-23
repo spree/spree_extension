@@ -23,5 +23,5 @@ Rails.application.config.after_initialize do
   # Spree.promotions.rules << Spree::Promotion::Rules::OnlyForVIPCustomers
   # Spree.promotions.actions << Spree::Promotion::Actions::GiftWithPurchase
   # Spree.stock_splitters << Spree::Stock::Splitter::SecretLogicSplitter
-  # Spree.taxon_rules << Spree::TaxonRules::ProductsWithColor
+  # Rails.application.config.spree.collection_rules << MyExtension::CollectionRules::ProductsWithColor
 end
